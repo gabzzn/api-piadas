@@ -25,4 +25,14 @@ export async function setupDatabase() {
     `);
 
     console.log('Tabelas criadas ou já existiam.');
+
+    await db.exec(`
+        CREATE TABLE IF NOT EXISTS usuarios (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL UNIQUE,
+            senha TEXT NOT NULL
+        );
+    `);
+
+    console.log('Tabela de usuários criada.');
 }
