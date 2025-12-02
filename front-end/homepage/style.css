@@ -1,0 +1,195 @@
+/* Variáveis CSS para Cores e Fontes (Paleta Moderna Otimizada) */
+:root {
+    --cor-primaria: #0077B6; /* Azul Escuro Sereno (Deep Blue) */
+    --cor-secundaria: #00B4D8; /* Ciano/Verde-água Vibrante (Toque moderno) */
+    --cor-fundo: #FAFAFA; /* Fundo Ultra-Claro */
+    --cor-texto: #1F2937; /* Cinza Quase-Preto para Leitura */
+    --cor-borda: #E5E7EB; /* Borda Cinza Muito Suave */
+    --cor-sucesso: #34D399; /* Verde Sucesso Moderno */
+    --cor-erro: #EF4444; /* Vermelho de Erro */
+    --fonte-principal: 'Inter', system-ui, sans-serif;
+    --sombra-media: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Configurações Gerais (Reset e Base) --- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+/* --- Cabeçalho (Header) --- */
+
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 25px 0; /* Um pouco mais de padding para um visual premium */
+    text-align: center;
+    box-shadow: var(--sombra-media);
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 800; /* Extra-bold */
+    letter-spacing: 1px;
+}
+
+/* --- Conteúdo Principal (Main) --- */
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Mais espaço entre as seções */
+}
+
+/* --- Estilo dos Containers (enviar, pegar) --- */
+
+.enviar, .pegar {
+    background-color: white;
+    padding: 35px;
+    border-radius: 16px; /* Bordas mais arredondadas */
+    box-shadow: var(--sombra-media);
+    border: 1px solid var(--cor-borda); /* Borda sutil */
+    transition: all 0.3s ease;
+}
+
+.enviar:hover, .pegar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Formulário e Inputs --- */
+
+#piadaForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-texto);
+    font-size: 1em;
+}
+
+#piadaForm input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--cor-fundo); /* Fundo claro para o input */
+}
+
+#piadaForm input[type="text"]:focus {
+    border-color: var(--cor-secundaria);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.2);
+    background-color: white;
+}
+
+/* --- Botões Gerais --- */
+
+input[type="submit"], #pegarPiadaBtn {
+    display: inline-block;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"]:hover, #pegarPiadaBtn:hover {
+    background-color: var(--cor-secundaria); /* Mudar para a cor de destaque no hover */
+    box-shadow: 0 6px 10px rgba(0, 180, 216, 0.3);
+}
+
+input[type="submit"]:active, #pegarPiadaBtn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* --- Exibição de Mensagens/Piadas --- */
+
+#mensagem {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #ecfdf5; /* Fundo suave do sucesso */
+    color: var(--cor-sucesso);
+    border: 1px solid var(--cor-sucesso);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+#piadaDisplay {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    min-height: 100px;
+    font-size: 1.3em;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--cor-texto);
+    line-height: 1.5;
+    text-align: center;
+}
+
+#piadaDisplay p {
+    margin-bottom: 12px;
+}
+
+#piadaDisplay strong {
+    font-weight: 700;
+    display: block;
+    margin-top: 15px;
+    color: var(--cor-primaria); /* Cor principal para a resposta */
+    font-style: normal;
+}
+
+/* --- Responsividade (Adaptação para telas menores) --- */
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    .enviar, .pegar {
+        padding: 25px;
+    }
+
+    input[type="submit"], #pegarPiadaBtn {
+        width: 100%;
+        margin-top: 15px;
+        font-size: 1em;
+    }
+
+    #piadaDisplay {
+        font-size: 1.1em;
+    }
+}

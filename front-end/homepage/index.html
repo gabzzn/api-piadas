@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sle.css">
+    <title>Piadas Incríveis</title>
+</head>
+<body>
+    <header>
+        <h1>Piadas Incríveis</h1>
+    <header>
+    <main>
+        <!--Formulário para enviar piadas -->
+    <div id="enviar piadas" class="enviar">
+        <form id="piadaForm">
+            <label for="pergunta">Pergunta:</label><br>
+            <input type="text" id="pergunta" name="pergunta" required><br><br>
+            <label for="resposta">Resposta:</label><br>
+            <input type="text" id="resposta" name="resposta" required><br><br>
+            <input type="submit" value="Enviar Piada">
+        </form>
+            <p id="mensagem"></p>
+    </div>
+       <!-- Pegar piada aleatória -->
+    <div id="pegar piada" class="pegar">
+        <button id="pegarPiadaBtn">Pegar Piada Aleatória</button>
+        <div id="piadaDisplay"></div>
+    </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
