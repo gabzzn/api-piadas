@@ -4,6 +4,7 @@ import express from "express";
 import { setupDatabase } from "./config/database.js";
 import piadaRoutes from "./routes/piadaRoutes.js"; //importa as rotas de piadas
 import cors from "cors";
+import authRoutes from './routes/authRoutes.js';
 
 const PORT = 3000;
 app.use(cors());
@@ -15,6 +16,8 @@ setupDatabase(); //configura o banco de dados
 
 //usa as rotas de piadas com o prefixo '/api'
 app.use("/api", piadaRoutes);
+    //rota de autenticação
+    app.use('/api', authRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);

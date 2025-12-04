@@ -42,7 +42,7 @@ export async function getPiadaAleatoria() {
 //lista apenas as piadas que ainda NÃO foram moderadas
 export async function getPiadasPendentes() {
     const db = await openDB();
-    return await db.all('SELECT * FROM piadas WHERE aprovado = 0');
+    return await db.all('SELECT * FROM piadas WHERE aprovada = 0');
 }
 
 //modera (aprova ou rejeita) uma piada pelo id
@@ -51,7 +51,7 @@ export async function moderarPiada(id, aprovada) {
 
     //altera os dados existentes
     const result = await db.run(
-        'UPDATE piadas SET aprovado = ? WHERE id = ?',
+        'UPDATE piadas SET aprovada = ? WHERE id = ?',
         aprovada,
         id
     );
