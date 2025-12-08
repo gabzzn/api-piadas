@@ -2,6 +2,16 @@
 
 import { openDB } from '../config/database.js';
 
+export async function createUser(email, senhaHash) {
+    const db = await openDB();
+    const result = await db.run(
+        'INSERT INTO usuarios (email, senha) VALUES (?, ?)',
+        email,
+        senhaHash
+    );
+    return { id: result.lastID, email };
+}
+
 export async function createUser(email, senha) {
     const db = await openDB();
     const result = await db.run(

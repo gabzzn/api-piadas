@@ -1,4 +1,5 @@
 import { Router } from "express";
+import authMiddleware from "../middlewares/authMiddleware.js";
 import { submeterPiada, buscarPiadaAleatoria, listarPiadasPendentes, aprovarPiada } from "../controllers/piadaController.js";
 
 const router = Router();
@@ -12,5 +13,8 @@ router.get("/piadas", buscarPiadaAleatoria);
 //rotas admin (por enquanto abertas)
 router.get('/piadas/pendentes', listarPiadasPendentes);
 router.put('/piadas/:id/aprovar', aprovarPiada);
+
+router.get('/piadas/pendentes', authMiddleware, listarPiadasPendentes);
+router.put('/piadas/:id/aprovar', authMiddleware, aprovarPiada);
 
 export default router;
