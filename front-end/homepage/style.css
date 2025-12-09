@@ -1,157 +1,173 @@
-/* ===== RESET ===== */
-* {
+/* Configurações básicas e reset */
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    background-color: #f4f4f9; /* Fundo claro para o corpo */
+    color: #333; /* Cor de texto padrão */
+    line-height: 1.6;
 }
 
-/* ===== BODY ===== */
-body {
-    background: #0f0f0f;
-    color: #eaeaea;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* tira espaço em branco no final */
-}
-
-/* ===== HEADER ===== */
+/* Estilo do Cabeçalho */
 header {
-    background: #111;
-    padding: 25px 20px;
+    background-color: #2c3e50; /* Cor escura para o cabeçalho (Mesmo padrão) */
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    border-bottom: 1px solid #222;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.3rem;
-    font-weight: 700;
-    color: #00e1ff;
-    text-shadow: 0 0 10px #00e1ff88;
+    margin-bottom: 10px;
+    font-size: 2.5em;
 }
 
 header a {
-    margin-top: 10px;
-    display: inline-block;
-    color: #fff;
-    font-weight: 500;
+    color: #ecf0f1; /* Cor de link mais clara */
     text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 6px;
-    border: 1px solid #00e1ff55;
-    transition: .3s;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid #ecf0f1;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header a:hover {
-    background: #00e1ff;
-    color: #000;
-    box-shadow: 0 0 12px #00e1ff;
+    background-color: #34495e; /* Fundo levemente mais escuro ao passar o mouse */
+    color: white;
 }
 
-/* ===== MAIN ===== */
+/* Estilo da Seção Principal */
 main {
-    flex: 1; /* ocupa o espaço disponível (remove área vazia no fim) */
-    max-width: 850px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
     padding: 40px 20px;
+    max-width: 800px; /* Limita a largura máxima do conteúdo principal */
+    margin: 0 auto; /* Centraliza o container principal */
 }
 
-/* ===== CARD GENÉRICO ===== */
-.card {
-    background: #151515;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px #000;
-    border: 1px solid #222;
-    margin-bottom: 30px;
-    transition: .3s;
-}
-
-.card:hover {
-    border-color: #00e1ff55;
-}
-
-/* ===== FORMULÁRIO ===== */
-.enviar label {
-    font-weight: 600;
-}
-
-.enviar input[type="text"] {
-    width: 100%;
-    margin: 10px 0 20px;
-    padding: 12px;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #333;
-    background: #1b1b1b;
-    color: #fff;
-    transition: .3s;
-}
-
-.enviar input[type="text"]:focus {
-    border-color: #00e1ff;
-    outline: none;
-    box-shadow: 0 0 8px #00e1ff55;
-}
-
-/* BOTÃO DO FORMULÁRIO */
-.enviar input[type="submit"] {
-    width: 100%;
-    background: #00e1ff;
-    color: #000;
-    border: none;
-    padding: 14px;
-    font-size: 1.1rem;
-    cursor: pointer;
+/* Estilo para as caixas de Formulário e Botão (usando as classes .enviar e .pegar) */
+.enviar, .pegar {
+    background-color: white;
+    padding: 30px;
     border-radius: 8px;
-    transition: .3s;
-    font-weight: 600;
-}
-
-.enviar input[type="submit"]:hover {
-    background: #00b8d6;
-    box-shadow: 0 0 12px #00e1ff;
-}
-
-/* ===== PEGAR PIADA ===== */
-.pegar button {
-    background: #8b5cff;
-    color: #fff;
-    border: none;
-    padding: 14px 22px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: .3s;
-}
-
-.pegar button:hover {
-    background: #6c3dff;
-    box-shadow: 0 0 15px #8b5cff;
-}
-
-#piadaDisplay {
-    margin-top: 25px;
-    padding: 20px;
-    background: #1a1a1a;
-    border-radius: 10px;
-    border: 1px solid #222;
-    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; /* Largura máxima para as caixas */
+    margin-bottom: 20px;
     text-align: center;
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* Estilo do Formulário de Envio */
+#piadaForm {
+    text-align: left;
+}
+
+#piadaForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#piadaForm input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo do Botão de Envio de Piada */
+#piadaForm input[type="submit"] {
+    background-color: #1abc9c; /* Cor de destaque (Mesmo padrão) */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#piadaForm input[type="submit"]:hover {
+    background-color: #16a085;
+}
+
+/* Estilo do Botão "Pegar Piada Aleatória" */
+#pegarPiadaBtn {
+    background-color: #3498db; /* Uma cor secundária de destaque */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px; /* Botão arredondado para destaque */
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 80%;
+    max-width: 300px;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+#pegarPiadaBtn:hover {
+    background-color: #2980b9;
+}
+
+#pegarPiadaBtn:active {
+    transform: scale(0.98); /* Efeito de clique */
+}
+
+/* Estilo para a Piada Exibida */
+#piadaDisplay {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ecf0f1; /* Fundo para a piada */
+    border-left: 5px solid #1abc9c; /* Borda de destaque */
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1.2em;
+    min-height: 50px; /* Altura mínima para melhor visualização */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#piadaDisplay p {
+    margin: 5px 0;
+}
+
+#piadaDisplay strong {
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+/* Estilo da Mensagem de Feedback (para o form) */
+#mensagem {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #e74c3c;
+    text-align: center;
+}
+
+/* Estilos de responsividade */
 @media (max-width: 600px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.8em;
     }
 
-    .card {
+    .enviar, .pegar {
         padding: 20px;
+        margin: 0 10px 20px 10px;
     }
-
-    .pegar button {
-        width: 100%;
+    
+    #pegarPiadaBtn {
+        font-size: 1em;
+        padding: 12px 20px;
     }
 }
